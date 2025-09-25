@@ -1,5 +1,5 @@
 # Ammar Hatiya
-Personal Portfolio Website (WIP)
+Personal Portfolio Website (Work In Progress)
 
  **Stack summary:** Next.js 15 + TypeScript + Tailwind + Contentlayer (MDX) + PostgreSQL (Supabase) + Fuse.js + NextAuth + Vercel + GitHub Actions
 
