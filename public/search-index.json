@@ -52,6 +52,20 @@
   },
   {
     "type": "project",
+    "slug": "entra-id-auditor",
+    "title": "Identity Governance & Entra ID Security Engine",
+    "summary": "Enterprise-grade Identity Governance utility that automates Entra ID hygiene by auditing and providing instant remediation scripts.",
+    "stack": [
+      "Python",
+      "Azure AD",
+      "Entra ID",
+      "Zero-trust",
+      "Cloud"
+    ],
+    "impact": "Recapture a share of the $30B lost annually to 'ghost' licenses by automating the detection of stale, over-privileged, and leak-prone accounts"
+  },
+  {
+    "type": "project",
     "slug": "infra-cost-optimizer",
     "title": "Infrastructure Cost Optimizer",
     "summary": "ML-powered tool that analyzes AWS spending patterns and automatically right-sizes instances, saving 32% on monthly cloud bills.",
@@ -66,17 +80,17 @@
   },
   {
     "type": "project",
-    "slug": "k8s-deployment-engine",
-    "title": "Kubernetes Deployment Engine",
-    "summary": "Self-service deployment platform with GitOps workflows, enabling teams to ship to production in under 10 minutes.",
+    "slug": "kb-vqg",
+    "title": "K-VQG: Multimodal AI Knowledge Extraction & VQG",
+    "summary": "Automated pipeline integrating GPT-V & Seq2Seq to transform visual data into structured, knowledge-based insights & questions.",
     "stack": [
-      "Kubernetes",
-      "ArgoCD",
-      "Go",
-      "GitHub Actions",
-      "Helm"
+      "Python",
+      "Docker",
+      "Seq2Seq",
+      "System Design",
+      "NLP"
     ],
-    "impact": "Cut deployment time from 45 min to under 10 min — adopted by 12 engineering teams"
+    "impact": "Optimized inference reliability via 2-shot learning, achieving a 90.7% semantic similarity score"
   },
   {
     "type": "project",
@@ -93,59 +107,66 @@
     "impact": "MTTR reduced from 45 min to 12 min — 99.95% SLA achieved"
   },
   {
-    "type": "project",
-    "slug": "serverless-event-pipeline",
-    "title": "Serverless Event Processing Pipeline",
-    "summary": "Real-time event ingestion system processing 2M+ events/day with sub-second latency using AWS Lambda and EventBridge.",
-    "stack": [
-      "AWS",
-      "Lambda",
-      "EventBridge",
-      "DynamoDB",
-      "TypeScript"
-    ],
-    "impact": "Processes 2M+ events/day at p99 latency under 800ms"
-  },
-  {
     "type": "experience",
-    "slug": "cloud-engineer",
-    "title": "Cloud Engineer",
-    "company": "NovaTech Solutions",
+    "slug": "green-infrastructure-partners",
+    "title": "Cloud & Infrastructure Support Analyst",
+    "company": "Green Infrastructure Partners",
     "technologies": [
-      "AWS",
-      "Docker",
-      "Ansible",
-      "Python",
-      "Prometheus",
-      "Grafana"
+      "Azure",
+      "SQL",
+      "PHP",
+      "IaC"
     ]
   },
   {
     "type": "experience",
-    "slug": "devops-engineer",
-    "title": "DevOps Engineer",
-    "company": "Basecamp Digital",
+    "slug": "inago",
+    "title": "Software Engineer – AI/Backend (Research)",
+    "company": "iNAGO",
     "technologies": [
-      "Linux",
-      "Docker",
-      "Jenkins",
-      "Bash",
-      "Nginx",
-      "AWS"
+      "Python",
+      "PyTorch",
+      "JIRA",
+      "SQL",
+      "NLP"
     ]
   },
   {
     "type": "experience",
-    "slug": "senior-cloud-engineer",
-    "title": "Senior Cloud & Automation Engineer",
-    "company": "Meridian Systems",
+    "slug": "mely-ai",
+    "title": "Full Stack Software Developer Intern",
+    "company": "Mely.ai",
     "technologies": [
-      "AWS",
-      "Terraform",
-      "Kubernetes",
       "Python",
-      "ArgoCD",
-      "GitHub Actions"
+      "C#",
+      "ASP.NET",
+      "SQL",
+      "Node.js",
+      "Vue.js",
+      "Docker"
+    ]
+  },
+  {
+    "type": "experience",
+    "slug": "nuvoola",
+    "title": "Software Developer Intern",
+    "company": "Nuvoola",
+    "technologies": [
+      "AWS EC2/S3/Textract",
+      "React.js",
+      "Node.js",
+      "Docker",
+      "JIRA"
+    ]
+  },
+  {
+    "type": "experience",
+    "slug": "shornali-solutions",
+    "title": "Automation Developer (Contract)",
+    "company": "Shornali Solutions",
+    "technologies": [
+      "Python",
+      "Cloud/Network Infrastructure"
     ]
   }
 ]
