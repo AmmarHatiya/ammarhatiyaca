@@ -1,0 +1,40 @@
+{
+  "Cloud": [
+    "AWS (EC2, Lambda, S3, RDS, CloudFormation)",
+    "Azure (VMs, Functions, AKS)",
+    "GCP (GCE, Cloud Run)",
+    "Terraform",
+    "Pulumi"
+  ],
+  "Languages": [
+    "Python",
+    "TypeScript",
+    "Go",
+    "Bash",
+    "PowerShell"
+  ],
+  "DevOps": [
+    "Docker",
+    "Kubernetes",
+    "GitHub Actions",
+    "GitLab CI/CD",
+    "ArgoCD",
+    "Ansible"
+  ],
+  "Frameworks": [
+    "FastAPI",
+    "Flask",
+    "Next.js",
+    "Express",
+    "Serverless Framework"
+  ],
+  "Tools": [
+    "Prometheus",
+    "Grafana",
+    "Datadog",
+    "Vault",
+    "Nginx",
+    "Linux",
+    "Git"
+  ]
+}

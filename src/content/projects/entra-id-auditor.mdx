@@ -1,0 +1,33 @@
+---
+title: "Identity Governance & Entra ID Security Engine"
+summary: "Enterprise-grade Identity Governance utility that automates Entra ID hygiene by auditing and providing instant remediation scripts."
+stack: ["Python", "Azure AD", "Entra ID", "Zero-trust", "Cloud"]
+impact: "Recapture a share of the $30B lost annually to 'ghost' licenses by automating the detection of stale, over-privileged, and leak-prone accounts"
+codeUrl: "https://github.com/AmmarHatiya/Azure-Entra-Governance-Engine"
+featured: true
+date: "2025-12-10"
+thumbnail: "/projects/aad-audit/hero.png"
+images:
+  - src: "/projects/aad-audit/hero.svg"
+    alt: "Kubernetes deployment engine GitOps workflow"
+  - src: "/projects/aad-audit/detail-1.svg"
+    alt: "CI/CD pipeline flow diagram"
+---
+
+## Overview
+
+Developed an internal deployment platform that abstracted Kubernetes complexity behind a developer-friendly CLI and web dashboard, enabling self-service production deployments with built-in guardrails.
+
+## Technical Approach
+
+- Built a Go-based CLI that generated Helm charts from a simplified YAML config, reducing boilerplate by 80%
+- Implemented GitOps workflows with ArgoCD for declarative, auditable deployments across staging and production clusters
+- Created GitHub Actions pipelines with automated canary analysis using Prometheus metrics
+- Designed a rollback system that could revert any deployment in under 60 seconds
+
+## Results
+
+- **Deployment time reduced from 45 minutes to under 10 minutes** end-to-end
+- **12 engineering teams** adopted the platform within the first quarter
+- **Zero failed production deployments** in the 6 months after launch due to automated canary checks
+- On-call incidents related to bad deploys dropped by 70%

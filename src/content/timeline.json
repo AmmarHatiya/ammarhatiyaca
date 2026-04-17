@@ -1,0 +1,56 @@
+[
+  {
+    "date": "2015-09",
+    "type": "education",
+    "title": "Started B.Sc. Computer Science",
+    "subtitle": "Ontario Tech University"
+  },
+  {
+    "date": "2019-06",
+    "type": "education",
+    "title": "Graduated B.Sc. Computer Science",
+    "subtitle": "Ontario Tech University — Dean's List"
+  },
+  {
+    "date": "2019-06",
+    "type": "career",
+    "title": "DevOps Engineer",
+    "subtitle": "Basecamp Digital — Waterloo, Canada"
+  },
+  {
+    "date": "2021-01",
+    "type": "career",
+    "title": "Cloud Engineer",
+    "subtitle": "NovaTech Solutions — Toronto, Canada"
+  },
+  {
+    "date": "2022-03",
+    "type": "certification",
+    "title": "AWS Solutions Architect – Associate",
+    "subtitle": "Amazon Web Services"
+  },
+  {
+    "date": "2023-01",
+    "type": "certification",
+    "title": "HashiCorp Terraform Associate",
+    "subtitle": "HashiCorp"
+  },
+  {
+    "date": "2023-03",
+    "type": "career",
+    "title": "Senior Cloud & Automation Engineer",
+    "subtitle": "Meridian Systems — Toronto, Canada"
+  },
+  {
+    "date": "2023-06",
+    "type": "certification",
+    "title": "Certified Kubernetes Administrator",
+    "subtitle": "CNCF"
+  },
+  {
+    "date": "2024-02",
+    "type": "certification",
+    "title": "AWS DevOps Engineer – Professional",
+    "subtitle": "Amazon Web Services"
+  }
+]

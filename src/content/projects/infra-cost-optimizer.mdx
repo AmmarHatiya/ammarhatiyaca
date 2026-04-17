@@ -1,0 +1,27 @@
+---
+title: "Infrastructure Cost Optimizer"
+summary: "ML-powered tool that analyzes AWS spending patterns and automatically right-sizes instances, saving 32% on monthly cloud bills."
+stack: ["Python", "AWS", "Lambda", "Terraform", "Grafana"]
+impact: "Saved 32% on cloud spend — $240k annually across 3 business units"
+codeUrl: "https://github.com"
+date: "2024-11-10"
+thumbnail: "/projects/cost-optimizer/hero.png"
+---
+
+## Overview
+
+Built an automated cost optimization engine that continuously analyzed AWS resource utilization and recommended (or automatically applied) right-sizing changes across EC2, RDS, and ElastiCache instances.
+
+## Technical Approach
+
+- Developed Python Lambda functions that pulled CloudWatch metrics and Cost Explorer data on a daily schedule
+- Trained a lightweight anomaly detection model to distinguish between genuine usage spikes and over-provisioned resources
+- Created Terraform modules to apply approved changes automatically during maintenance windows
+- Built Grafana dashboards showing real-time spend breakdowns with forecasting
+
+## Results
+
+- **32% reduction in monthly cloud spend** — approximately $240k saved annually
+- **Automated right-sizing** for 150+ EC2 instances and 40+ RDS instances
+- **Spot Fleet integration** for batch workloads reduced compute costs by an additional 60%
+- Engineering teams gained visibility into per-service costs for the first time

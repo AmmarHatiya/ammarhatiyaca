@@ -1,0 +1,51 @@
+---
+title: "Zero-Downtime Kubernetes Deployments: A Practical Guide"
+date: "2025-06-03"
+summary: "How to configure rolling updates, readiness probes, and pod disruption budgets so your users never notice a deployment."
+tags: ["Kubernetes", "DevOps", "SRE"]
+published: true
+coverImage: "/blog/k8s-cover.svg"
+---
+
+Deploying to Kubernetes without downtime sounds simple until you actually try it under production traffic. Here is everything I learned from running deployments across 50+ microservices.
+
+## The Basics: Rolling Updates
+
+Kubernetes rolling updates replace pods one at a time, but the default settings are often too aggressive. Here is what I use for production services:
+
+```yaml
+strategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 0
+```
+
+Setting `maxUnavailable: 0` ensures there is always at least the desired number of healthy pods running. The trade-off is slower deployments, but for user-facing services, reliability beats speed.
+
+## Readiness Probes: The Unsung Hero
+
+Your readiness probe is the gatekeeper between your pod and production traffic. A misconfigured probe is the number one cause of deployment-related errors I have seen.
+
+Key principles:
+- **Check actual functionality**, not just "is the process running." Hit an endpoint that queries the database, checks cache connectivity, and validates config
+- **Set `initialDelaySeconds` generously.** If your app takes 30 seconds to warm up, set it to 35. Being conservative here prevents serving errors
+- **Separate readiness from liveness.** Liveness probes restart pods; readiness probes remove them from the load balancer. Conflating them causes cascading restarts under load
+
+## Pod Disruption Budgets
+
+PDBs tell Kubernetes how many pods can be down simultaneously during voluntary disruptions (node drains, cluster upgrades). Without them, a cluster autoscaler can evict all your replicas at once.
+
+```yaml
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: api-pdb
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: api
+```
+
+For any service running 3+ replicas, I set `minAvailable` to N-1. It is the simplest thing you can do to prevent accidental outages.

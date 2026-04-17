@@ -1,0 +1,35 @@
+---
+title: "Enterprise Cloud Migration Platform"
+summary: "Built an automated multi-cloud migration toolkit that moved 200+ workloads from on-prem VMware to AWS with zero downtime."
+stack: ["AWS", "Terraform", "Python", "Docker", "CloudFormation"]
+impact: "Migrated 200+ workloads with 99.99% uptime — saved $18k/month in infrastructure costs"
+codeUrl: "https://github.com"
+featured: true
+date: "2025-01-15"
+thumbnail: "/projects/cloud-migration/hero.png"
+images:
+  - src: "/projects/cloud-migration/hero.svg"
+    alt: "Cloud migration platform architecture overview"
+  - src: "/projects/cloud-migration/detail-1.svg"
+    alt: "Multi-cloud migration pipeline architecture diagram"
+  - src: "/projects/cloud-migration/detail-2.svg"
+    alt: "Migration dashboard showing workload progress"
+---
+
+## Overview
+
+Designed and implemented a comprehensive cloud migration platform that automated the assessment, planning, and execution of workload migrations from on-premises VMware environments to AWS.
+
+## Technical Approach
+
+- Built a Python-based discovery agent that inventoried 200+ VMs, mapping dependencies and network topology automatically
+- Created Terraform modules for repeatable infrastructure provisioning across multiple AWS regions
+- Implemented a blue-green migration strategy using AWS Application Migration Service with custom pre/post-migration validation scripts
+- Designed CloudFormation templates for consistent networking (VPC, Transit Gateway, Direct Connect) across 4 AWS accounts
+
+## Results
+
+- **Zero-downtime migration** for all production workloads over a 6-month period
+- **$18k/month savings** through right-sizing, Reserved Instances, and eliminating legacy hardware maintenance
+- **40% faster provisioning** compared to manual infrastructure setup
+- Migration runbooks and IaC templates now used as the standard for all new cloud deployments

@@ -1,0 +1,28 @@
+---
+title: "K-VQG: Multimodal AI Knowledge Extraction & VQG"
+summary: "Automated pipeline integrating GPT-V & Seq2Seq to transform visual data into structured, knowledge-based insights & questions."
+stack: ["Python", "Docker", "Seq2Seq", "System Design", "NLP"]
+impact: "Optimized inference reliability via 2-shot learning, achieving a 90.7% semantic similarity score"
+codeUrl: "https://github.com/AmmarHatiya/Knowledge-Based-Visual-Question-Generation"
+date: "2025-04-01"
+thumbnail: "/projects/kb-vqg/hero.png"
+featured: true
+---
+
+## Overview
+
+Architected a serverless event-driven pipeline that replaced a monolithic batch processing system, enabling real-time data processing at scale with dramatically lower operational overhead.
+
+## Technical Approach
+
+- Designed event schemas and routing rules using AWS EventBridge with 15+ event types
+- Implemented TypeScript Lambda functions for event transformation, enrichment, and storage
+- Used DynamoDB single-table design for high-throughput reads/writes with consistent sub-10ms latency
+- Built dead-letter queue handling with automated retry logic and alerting via SNS
+
+## Results
+
+- **2M+ events processed daily** with p99 latency consistently under 800ms
+- **85% reduction in operational overhead** — no servers to manage or patch
+- **Cost reduced by 60%** compared to the previous EC2-based batch system
+- System auto-scales to handle 10x traffic spikes during peak periods without intervention

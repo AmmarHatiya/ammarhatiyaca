@@ -1,0 +1,151 @@
+[
+  {
+    "type": "blog",
+    "slug": "aws-cost-optimization",
+    "title": "How We Cut Our AWS Bill by 32% Without Sacrificing Performance",
+    "summary": "A step-by-step breakdown of the tooling and strategies we used to save $240k annually on cloud infrastructure.",
+    "tags": [
+      "AWS",
+      "Cost Optimization",
+      "Cloud"
+    ],
+    "date": "2025-02-18"
+  },
+  {
+    "type": "blog",
+    "slug": "k8s-zero-downtime",
+    "title": "Zero-Downtime Kubernetes Deployments: A Practical Guide",
+    "summary": "How to configure rolling updates, readiness probes, and pod disruption budgets so your users never notice a deployment.",
+    "tags": [
+      "Kubernetes",
+      "DevOps",
+      "SRE"
+    ],
+    "date": "2025-06-03"
+  },
+  {
+    "type": "blog",
+    "slug": "terraform-best-practices",
+    "title": "Terraform at Scale: Lessons from Managing 200+ Modules",
+    "summary": "Hard-won patterns for structuring Terraform codebases that stay maintainable as your infrastructure grows from 10 resources to 10,000.",
+    "tags": [
+      "Terraform",
+      "IaC",
+      "AWS",
+      "DevOps"
+    ],
+    "date": "2025-09-12"
+  },
+  {
+    "type": "project",
+    "slug": "cloud-migration-platform",
+    "title": "Enterprise Cloud Migration Platform",
+    "summary": "Built an automated multi-cloud migration toolkit that moved 200+ workloads from on-prem VMware to AWS with zero downtime.",
+    "stack": [
+      "AWS",
+      "Terraform",
+      "Python",
+      "Docker",
+      "CloudFormation"
+    ],
+    "impact": "Migrated 200+ workloads with 99.99% uptime — saved $18k/month in infrastructure costs"
+  },
+  {
+    "type": "project",
+    "slug": "infra-cost-optimizer",
+    "title": "Infrastructure Cost Optimizer",
+    "summary": "ML-powered tool that analyzes AWS spending patterns and automatically right-sizes instances, saving 32% on monthly cloud bills.",
+    "stack": [
+      "Python",
+      "AWS",
+      "Lambda",
+      "Terraform",
+      "Grafana"
+    ],
+    "impact": "Saved 32% on cloud spend — $240k annually across 3 business units"
+  },
+  {
+    "type": "project",
+    "slug": "k8s-deployment-engine",
+    "title": "Kubernetes Deployment Engine",
+    "summary": "Self-service deployment platform with GitOps workflows, enabling teams to ship to production in under 10 minutes.",
+    "stack": [
+      "Kubernetes",
+      "ArgoCD",
+      "Go",
+      "GitHub Actions",
+      "Helm"
+    ],
+    "impact": "Cut deployment time from 45 min to under 10 min — adopted by 12 engineering teams"
+  },
+  {
+    "type": "project",
+    "slug": "observability-stack",
+    "title": "Full-Stack Observability Platform",
+    "summary": "Unified monitoring, logging, and tracing platform built on Prometheus, Grafana, and OpenTelemetry for 50+ microservices.",
+    "stack": [
+      "Prometheus",
+      "Grafana",
+      "Docker",
+      "Ansible",
+      "Python"
+    ],
+    "impact": "MTTR reduced from 45 min to 12 min — 99.95% SLA achieved"
+  },
+  {
+    "type": "project",
+    "slug": "serverless-event-pipeline",
+    "title": "Serverless Event Processing Pipeline",
+    "summary": "Real-time event ingestion system processing 2M+ events/day with sub-second latency using AWS Lambda and EventBridge.",
+    "stack": [
+      "AWS",
+      "Lambda",
+      "EventBridge",
+      "DynamoDB",
+      "TypeScript"
+    ],
+    "impact": "Processes 2M+ events/day at p99 latency under 800ms"
+  },
+  {
+    "type": "experience",
+    "slug": "cloud-engineer",
+    "title": "Cloud Engineer",
+    "company": "NovaTech Solutions",
+    "technologies": [
+      "AWS",
+      "Docker",
+      "Ansible",
+      "Python",
+      "Prometheus",
+      "Grafana"
+    ]
+  },
+  {
+    "type": "experience",
+    "slug": "devops-engineer",
+    "title": "DevOps Engineer",
+    "company": "Basecamp Digital",
+    "technologies": [
+      "Linux",
+      "Docker",
+      "Jenkins",
+      "Bash",
+      "Nginx",
+      "AWS"
+    ]
+  },
+  {
+    "type": "experience",
+    "slug": "senior-cloud-engineer",
+    "title": "Senior Cloud & Automation Engineer",
+    "company": "Meridian Systems",
+    "technologies": [
+      "AWS",
+      "Terraform",
+      "Kubernetes",
+      "Python",
+      "ArgoCD",
+      "GitHub Actions"
+    ]
+  }
+]

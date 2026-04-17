@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
+    --primary: 183 98% 22%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 45 12% 95%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 45 12% 95%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 45 12% 95%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 36 8% 85%;
+    --input: 36 8% 85%;
+    --ring: 183 98% 22%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 40 10% 8%;
+    --foreground: 40 3% 80%;
+    --card: 40 9% 10%;
+    --card-foreground: 40 3% 80%;
+    --popover: 40 9% 10%;
+    --popover-foreground: 40 3% 80%;
+    --primary: 188 35% 47%;
+    --primary-foreground: 40 10% 8%;
+    --secondary: 40 5% 16%;
+    --secondary-foreground: 40 3% 80%;
+    --muted: 40 5% 16%;
+    --muted-foreground: 40 2% 47%;
+    --accent: 40 5% 16%;
+    --accent-foreground: 40 3% 80%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 3% 22%;
+    --input: 40 3% 22%;
+    --ring: 188 35% 47%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Accordion animations */
+  [data-slot="accordion-content"][data-open] {
+    animation: accordionOpen 0.2s ease-out;
+  }
+
+  [data-slot="accordion-content"][data-closed] {
+    animation: accordionClose 0.2s ease-out;
+  }
+
+  @keyframes accordionOpen {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes accordionClose {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+}

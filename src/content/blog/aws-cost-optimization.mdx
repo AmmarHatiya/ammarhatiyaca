@@ -1,0 +1,33 @@
+---
+title: "How We Cut Our AWS Bill by 32% Without Sacrificing Performance"
+date: "2025-02-18"
+summary: "A step-by-step breakdown of the tooling and strategies we used to save $240k annually on cloud infrastructure."
+tags: ["AWS", "Cost Optimization", "Cloud"]
+published: true
+---
+
+Cloud cost optimization is not about cutting corners — it is about eliminating waste. Over six months, we reduced our AWS spend by 32% across three business units while maintaining our 99.95% uptime SLA. Here is how.
+
+## Step 1: Visibility
+
+You cannot optimize what you cannot see. We started by tagging every resource with `team`, `environment`, `service`, and `cost-center` tags. We enforced tagging via AWS Service Control Policies — untagged resources were flagged and blocked from creation in production accounts.
+
+With proper tagging in place, we built Grafana dashboards showing per-team, per-service daily spend. The immediate effect was cultural: teams started caring about their costs when they could see them.
+
+## Step 2: Right-Sizing
+
+We pulled 30 days of CloudWatch CPU and memory metrics for every EC2 and RDS instance. The results were staggering — 60% of our instances were utilizing less than 30% of their allocated resources.
+
+We wrote Python scripts that compared utilization against instance type catalogs and generated Terraform change plans for right-sizing. Every recommendation went through a review process before being applied during maintenance windows.
+
+## Step 3: Reserved Instances and Savings Plans
+
+For stable, predictable workloads (databases, core API servers), we purchased 1-year Compute Savings Plans. For variable workloads, we stayed on-demand but implemented aggressive auto-scaling.
+
+## Step 4: Spot Instances for Batch Work
+
+Our batch processing jobs (data pipelines, ML training, report generation) did not need guaranteed capacity. We migrated them to Spot Fleets with diversified instance pools, reducing compute costs for those workloads by 60%.
+
+## The Results
+
+After six months of incremental changes, our monthly AWS bill dropped from $62k to $42k — a 32% reduction. Annualized, that is roughly $240k back in the budget, redirected toward product development instead of idle infrastructure.

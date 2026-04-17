@@ -1,0 +1,39 @@
+---
+title: "Terraform at Scale: Lessons from Managing 200+ Modules"
+date: "2025-09-12"
+summary: "Hard-won patterns for structuring Terraform codebases that stay maintainable as your infrastructure grows from 10 resources to 10,000."
+tags: ["Terraform", "IaC", "AWS", "DevOps"]
+published: true
+coverImage: "/blog/terraform-cover.svg"
+---
+
+After managing Terraform codebases that grew from a handful of resources to thousands across multiple AWS accounts, I have developed strong opinions about what works and what turns into tech debt.
+
+## Module Structure That Scales
+
+The single biggest mistake teams make is putting everything in one giant root module. By the time you have 200+ resources, `terraform plan` takes 10 minutes and a single typo can blast your entire infrastructure.
+
+Instead, I structure modules around blast radius:
+
+```hcl
+modules/
+├── networking/       # VPC, subnets, route tables
+├── compute/          # EC2, ASGs, launch templates
+├── data/             # RDS, ElastiCache, DynamoDB
+├── security/         # IAM roles, security groups
+└── observability/    # CloudWatch, alarms, dashboards
+```
+
+Each module has its own state file, its own lifecycle, and its own blast radius. A bad change to your observability stack cannot take down your VPC.
+
+## State Management
+
+Remote state with S3 and DynamoDB locking is non-negotiable. But beyond the basics, consider state file granularity carefully. I use one state file per module per environment per region. It sounds like a lot, but when you need to surgically fix a production issue at 3 AM, you will thank yourself.
+
+## Version Pinning
+
+Pin everything. Provider versions, module versions, Terraform itself. Use a `.terraform-version` file with tfenv and enforce it in CI. I have seen too many "works on my machine" issues caused by provider version drift.
+
+## Testing
+
+Terraform testing is still maturing, but `terraform validate` and `tflint` in CI catch 80% of issues. For critical modules, I write integration tests with Terratest that spin up real infrastructure, validate it, and tear it down. Yes, it is slower — but it has caught production-breaking bugs that unit tests never would.
