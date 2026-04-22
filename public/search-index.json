@@ -2,6 +2,18 @@
   {
     "type": "blog",
     "slug": "aws-cost-optimization",
+    "title": "How We Cut Our AWS Bill by 32% Without Sacrificing Performance",
+    "summary": "A step-by-step breakdown of the tooling and strategies we used to save $240k annually on cloud infrastructure.",
+    "tags": [
+      "AWS",
+      "Cost Optimization",
+      "Cloud"
+    ],
+    "date": "2025-02-18"
+  },
+  {
+    "type": "blog",
+    "slug": "k8s-zero-downtime",
     "title": "",
     "summary": "",
     "tags": [],
@@ -9,28 +21,11 @@
   },
   {
     "type": "blog",
-    "slug": "k8s-zero-downtime",
-    "title": "Zero-Downtime Kubernetes Deployments: A Practical Guide",
-    "summary": "How to configure rolling updates, readiness probes, and pod disruption budgets so your users never notice a deployment.",
-    "tags": [
-      "Kubernetes",
-      "DevOps",
-      "SRE"
-    ],
-    "date": "2025-06-03"
-  },
-  {
-    "type": "blog",
     "slug": "terraform-best-practices",
-    "title": "Terraform at Scale: Lessons from Managing 200+ Modules",
-    "summary": "Hard-won patterns for structuring Terraform codebases that stay maintainable as your infrastructure grows from 10 resources to 10,000.",
-    "tags": [
-      "Terraform",
-      "IaC",
-      "AWS",
-      "DevOps"
-    ],
-    "date": "2025-09-12"
+    "title": "",
+    "summary": "",
+    "tags": [],
+    "date": ""
   },
   {
     "type": "project",
