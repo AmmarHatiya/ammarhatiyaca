@@ -29,7 +29,7 @@ export default function HomePage() {
           Ammar Hatiya
         </h1>
         <p className="mt-2 text-lg font-medium text-[hsl(var(--primary))]">
-          Cloud &amp; Automation Engineer
+          Cloud Infrastructure &amp; Automation Engineer
         </p>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
           I design and build scalable cloud infrastructure, deployment

@@ -2,14 +2,10 @@
   {
     "type": "blog",
     "slug": "aws-cost-optimization",
-    "title": "How We Cut Our AWS Bill by 32% Without Sacrificing Performance",
-    "summary": "A step-by-step breakdown of the tooling and strategies we used to save $240k annually on cloud infrastructure.",
-    "tags": [
-      "AWS",
-      "Cost Optimization",
-      "Cloud"
-    ],
-    "date": "2025-02-18"
+    "title": "",
+    "summary": "",
+    "tags": [],
+    "date": ""
   },
   {
     "type": "blog",
@@ -35,20 +31,6 @@
       "DevOps"
     ],
     "date": "2025-09-12"
-  },
-  {
-    "type": "project",
-    "slug": "cloud-migration-platform",
-    "title": "Enterprise Cloud Migration Platform",
-    "summary": "Built an automated multi-cloud migration toolkit that moved 200+ workloads from on-prem VMware to AWS with zero downtime.",
-    "stack": [
-      "AWS",
-      "Terraform",
-      "Python",
-      "Docker",
-      "CloudFormation"
-    ],
-    "impact": "Migrated 200+ workloads with 99.99% uptime — saved $18k/month in infrastructure costs"
   },
   {
     "type": "project",
@@ -94,17 +76,30 @@
   },
   {
     "type": "project",
-    "slug": "observability-stack",
-    "title": "Full-Stack Observability Platform",
-    "summary": "Unified monitoring, logging, and tracing platform built on Prometheus, Grafana, and OpenTelemetry for 50+ microservices.",
+    "slug": "tale-tailor",
+    "title": "Tale Tailor: Distributed State & Collaboration Engine",
+    "summary": "Cloud-integrated utility automating state synchronization and data durability for asynchronous, distributed user workflows.",
     "stack": [
-      "Prometheus",
-      "Grafana",
-      "Docker",
-      "Ansible",
-      "Python"
+      "Dart",
+      "Firebase",
+      "GCP",
+      "Docker"
     ],
-    "impact": "MTTR reduced from 45 min to 12 min — 99.95% SLA achieved"
+    "impact": "Ensured 100% data persistence and eliminated sync latency by architecting a hybrid storage layer with automated, event-driven state transitions"
+  },
+  {
+    "type": "project",
+    "slug": "xp-distribution",
+    "title": "XP: CI/CD-Driven Distributed Transaction Engine",
+    "summary": "Automated transaction system utilizing XP principles, CI pipelines, and batch processing for distributed data consistency.",
+    "stack": [
+      "C++",
+      "Python",
+      "TDD",
+      "Distributed Systems",
+      "CI/CD"
+    ],
+    "impact": "Accelerated release velocity through automated CI/CD pipelines while ensuring 100% data integrity via overnight batch synchronization."
   },
   {
     "type": "experience",
@@ -115,7 +110,8 @@
       "Azure",
       "SQL",
       "PHP",
-      "IaC"
+      "IaC",
+      "Entra ID"
     ]
   },
   {
@@ -126,6 +122,7 @@
     "technologies": [
       "Python",
       "PyTorch",
+      "Docker",
       "JIRA",
       "SQL",
       "NLP"
@@ -137,13 +134,15 @@
     "title": "Full Stack Software Developer Intern",
     "company": "Mely.ai",
     "technologies": [
+      "AWS EC2/Lambda/S3/Textract",
       "Python",
       "C#",
       "ASP.NET",
       "SQL",
       "Node.js",
       "Vue.js",
-      "Docker"
+      "Docker",
+      "Kubernetes"
     ]
   },
   {
@@ -156,7 +155,7 @@
       "React.js",
       "Node.js",
       "Docker",
-      "JIRA"
+      "Kubernetes"
     ]
   },
   {

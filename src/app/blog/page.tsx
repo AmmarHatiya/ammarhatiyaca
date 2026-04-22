@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Clock } from "lucide-react";
 import { AspectImage } from "@/components/aspect-image";
+import { BlogCards } from "@/components/blog-cards";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -30,11 +31,10 @@ export default function BlogPage() {
     <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
       <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Blog</h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        Writing about cloud infrastructure, DevOps practices, and lessons
-        learned in production.
+        Writing about things I&apos;m learning, building and passionate about.
       </p>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+      <BlogCards>
         {posts.map((post) => {
           const readTime = calculateReadTime(post.content);
           const formattedDate = new Date(post.frontmatter.date).toLocaleDateString(
@@ -86,7 +86,7 @@ export default function BlogPage() {
             </Link>
           );
         })}
-      </div>
+      </BlogCards>
 
       {posts.length === 0 && (
         <p className="mt-8 text-center text-sm text-muted-foreground">

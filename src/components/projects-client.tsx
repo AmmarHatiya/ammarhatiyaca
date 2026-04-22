@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Code2, ExternalLink, LayoutGrid, List } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -35,10 +35,17 @@ interface Props {
 export function ProjectsClient({ projects, allTags }: Props) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [view, setView] = useState<"grid" | "list">("grid");
+  const [mounted, setMounted] = useState(false);
 
   const filtered = activeTag
     ? projects.filter((p) => p.stack.includes(activeTag))
     : projects;
+
+  // Trigger animation after component mounts
+  useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -110,9 +117,13 @@ export function ProjectsClient({ projects, allTags }: Props) {
             <Card
               key={project.slug}
               className={cn(
-                "flex overflow-hidden",
+                "flex overflow-hidden transition-all duration-200 ease-out",
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
                 view === "list" ? "flex-row items-start" : "flex-col"
               )}
+              style={{
+                transitionDelay: mounted ? `${filtered.indexOf(project) * 100}ms` : "0ms"
+              }}
             >
               {/* Image slot: only rendered in grid view AND only when
                   thumbnail exists. AspectImage returns null for absent

@@ -1,17 +1,19 @@
 {
   "Cloud": [
     "AWS (EC2, Lambda, S3, RDS, CloudFormation)",
-    "Azure (VMs, Functions, AKS)",
+    "Azure (VMs, Functions, AKS, Entra ID)",
     "GCP (GCE, Cloud Run)",
     "Terraform",
-    "Pulumi"
+    "Infrastructure as Code (IaC)"
   ],
   "Languages": [
     "Python",
     "TypeScript",
-    "Go",
-    "Bash",
-    "PowerShell"
+    "JavaScript",
+    "C#",
+    "C++",
+    "Java",
+    "SQL"
   ],
   "DevOps": [
     "Docker",
@@ -22,9 +24,11 @@
     "Ansible"
   ],
   "Frameworks": [
+    "React",
+    "Vue.js",
+    "Next.js",
     "FastAPI",
     "Flask",
-    "Next.js",
     "Express",
     "Serverless Framework"
   ],

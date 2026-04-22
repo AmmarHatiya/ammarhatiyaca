@@ -40,8 +40,7 @@ export default function ProjectsPage() {
         Projects
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        A collection of cloud infrastructure, automation, and platform
-        engineering work.
+        A curated collection of my infrastructure, software, and automation engineering work.
       </p>
       <div className="mt-8">
         <ProjectsClient projects={projectData} allTags={allTags} />

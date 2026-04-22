@@ -1,6 +1,6 @@
 # Ammar Hatiya — Portfolio
 
-A personal portfolio site for a Cloud & Automation Engineer, built with Next.js 14, TypeScript, Tailwind CSS, and shadcn/ui.
+A personal portfolio site for a Cloud Infrastructure Engineer, built with Next.js 14, TypeScript, Tailwind CSS, and shadcn/ui.
 
 **Live:** [ammar.cloud](https://www.perplexity.ai/computer/a/ammar-hatiya-portfolio-fybJ330hSzCcoJ1PY2k6_g)
 

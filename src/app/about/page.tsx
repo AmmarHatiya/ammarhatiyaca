@@ -4,25 +4,22 @@ import { Download, Mail, MapPin } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { EducationCard } from "@/components/education-card";
 import { CertificationGrid } from "@/components/certification-grid";
-import { Timeline } from "@/components/timeline";
 import {
   getAbout,
   getEducation,
   getCertifications,
-  getTimeline,
 } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Cloud & Automation Engineer with 6+ years of experience in AWS, Kubernetes, and infrastructure-as-code. Based in Toronto, Canada.",
+    "Cloud Infrastructure Engineer with 6+ years of experience in AWS, Kubernetes, and infrastructure-as-code. Based in Toronto, Canada.",
   openGraph: {
     title: "About | Ammar Hatiya",
     description:
-      "Cloud & Automation Engineer with 6+ years of experience in AWS, Kubernetes, and infrastructure-as-code.",
+      "Cloud Infrastructure Engineer with 6+ years of experience in AWS, Kubernetes, and infrastructure-as-code.",
   },
 };
 
@@ -79,7 +76,6 @@ export default function AboutPage() {
   const about = getAbout();
   const education = getEducation();
   const certifications = getCertifications();
-  const timeline = getTimeline();
 
   /* Parse MDX sections for summary, interests, and personal note */
   const sections = about ? parseSections(about.content) : {};
@@ -154,7 +150,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── 5. TIMELINE ─── */}
-      {timeline.length > 0 && (
+      {/* {timeline.length > 0 && (
         <section aria-label="Career timeline" className="mt-10">
           <h2 className="text-lg font-semibold">Timeline</h2>
           <p className="mt-1 text-xs text-muted-foreground">
@@ -163,7 +159,7 @@ export default function AboutPage() {
           <Separator className="my-4" />
           <Timeline entries={timeline} />
         </section>
-      )}
+      )} */}
 
       {/* ─── 6. RESUME DOWNLOAD ─── */}
       <section aria-label="Resume download" className="mt-10">

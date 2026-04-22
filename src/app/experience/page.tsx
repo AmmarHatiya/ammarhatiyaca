@@ -40,7 +40,7 @@ export default function ExperiencePage() {
         Experience
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">
-        A timeline of my professional journey in cloud and platform engineering.
+        A timeline of my professional journey.
       </p>
       <div className="mt-10">
         <ExperienceTimeline items={experienceData} />

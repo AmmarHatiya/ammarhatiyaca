@@ -1,10 +1,11 @@
----
+{/* ---
 title: "Zero-Downtime Kubernetes Deployments: A Practical Guide"
 date: "2025-06-03"
 summary: "How to configure rolling updates, readiness probes, and pod disruption budgets so your users never notice a deployment."
 tags: ["Kubernetes", "DevOps", "SRE"]
 published: true
 coverImage: "/blog/k8s-cover.svg"
+hidden: false
 ---
 
 Deploying to Kubernetes without downtime sounds simple until you actually try it under production traffic. Here is everything I learned from running deployments across 50+ microservices.
@@ -48,4 +49,4 @@ spec:
       app: api
 ```
 
-For any service running 3+ replicas, I set `minAvailable` to N-1. It is the simplest thing you can do to prevent accidental outages.
+For any service running 3+ replicas, I set `minAvailable` to N-1. It is the simplest thing you can do to prevent accidental outages. */}

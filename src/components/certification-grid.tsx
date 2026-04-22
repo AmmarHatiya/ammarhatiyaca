@@ -1,5 +1,9 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { BadgeCheck, ExternalLink } from "lucide-react";
+import { useTheme } from "next-themes";
 import {
   Card,
   CardHeader,
@@ -15,18 +19,30 @@ interface Props {
 }
 
 /** Format "YYYY-MM" to "Mon YYYY" */
-function formatDate(dateStr: string): string {
+function formatDate(dateStr?: string): string {
+  if (!dateStr) return "";
   const [year, month] = dateStr.split("-");
   const date = new Date(parseInt(year), parseInt(month) - 1);
   return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
 }
 
 export function CertificationGrid({ certifications }: Props) {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="grid gap-3 sm:grid-cols-2">
       {certifications.map((cert) => {
-        const { name, issuer, dateEarned, expiryDate, verifyUrl, badgeSrc } =
+        const { name, issuer, dateEarned, expiryDate, verifyUrl, badgeSrc, badgeDark, inprogress, estimatedCompletion } =
           cert.frontmatter;
+
+        // Theme-aware badge selection (same pattern as experience-timeline)
+        const badgeUrl =
+          mounted && resolvedTheme === "dark" && badgeDark ? badgeDark : badgeSrc;
 
         return (
           <Card key={cert.slug} className="relative">
@@ -37,7 +53,7 @@ export function CertificationGrid({ certifications }: Props) {
                 {badgeSrc ? (
                   <div className="absolute right-3 top-3 flex h-14 w-14 shrink-0 items-center justify-center">
                     <Image
-                      src={badgeSrc}
+                      src={badgeUrl || badgeSrc}
                       alt={`${name} badge`}
                       width={56}
                       height={56}
@@ -59,10 +75,20 @@ export function CertificationGrid({ certifications }: Props) {
             </CardHeader>
             <CardContent>
               <p className="text-xs text-muted-foreground">
-                Earned {formatDate(dateEarned)}
-                {expiryDate && <> &middot; Expires {formatDate(expiryDate)}</>}
+                {inprogress ? (
+                  estimatedCompletion ? (
+                    `Est. Completion ${formatDate(estimatedCompletion)}`
+                  ) : (
+                    "In Progress"
+                  )
+                ) : (
+                  <>
+                    Earned {formatDate(dateEarned)}
+                    {expiryDate && <> &middot; Expires {formatDate(expiryDate)}</>}
+                  </>
+                )}
               </p>
-              {verifyUrl && (
+              {verifyUrl && !inprogress && (
                 <a
                   href={verifyUrl}
                   target="_blank"

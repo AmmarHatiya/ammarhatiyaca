@@ -1,10 +1,11 @@
----
+{/* ---
 title: "Terraform at Scale: Lessons from Managing 200+ Modules"
 date: "2025-09-12"
 summary: "Hard-won patterns for structuring Terraform codebases that stay maintainable as your infrastructure grows from 10 resources to 10,000."
 tags: ["Terraform", "IaC", "AWS", "DevOps"]
 published: true
 coverImage: "/blog/terraform-cover.svg"
+hidden: false
 ---
 
 After managing Terraform codebases that grew from a handful of resources to thousands across multiple AWS accounts, I have developed strong opinions about what works and what turns into tech debt.
@@ -36,4 +37,4 @@ Pin everything. Provider versions, module versions, Terraform itself. Use a `.te
 
 ## Testing
 
-Terraform testing is still maturing, but `terraform validate` and `tflint` in CI catch 80% of issues. For critical modules, I write integration tests with Terratest that spin up real infrastructure, validate it, and tear it down. Yes, it is slower — but it has caught production-breaking bugs that unit tests never would.
+Terraform testing is still maturing, but `terraform validate` and `tflint` in CI catch 80% of issues. For critical modules, I write integration tests with Terratest that spin up real infrastructure, validate it, and tear it down. Yes, it is slower — but it has caught production-breaking bugs that unit tests never would. */}

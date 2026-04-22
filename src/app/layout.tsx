@@ -19,15 +19,18 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Ammar Hatiya — Cloud & Automation Engineer",
+    default: "Ammar Hatiya - Cloud Infrastructure Engineer",
     template: "%s | Ammar Hatiya",
   },
   description:
-    "Cloud & Automation Engineer specializing in AWS architecture, Kubernetes, and infrastructure-as-code. Building scalable, cost-efficient cloud platforms.",
+    "Cloud Infrastructure Engineer specializing in AWS architecture, Kubernetes, and infrastructure-as-code. Building scalable, cost-efficient cloud platforms.",
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
-    title: "Ammar Hatiya — Cloud & Automation Engineer",
+    title: "Ammar Hatiya - Cloud Infrastructure Engineer",
     description:
-      "Cloud & Automation Engineer specializing in AWS architecture, Kubernetes, and infrastructure-as-code.",
+      "Cloud Infrastructure Engineer specializing in AWS architecture, Kubernetes, and infrastructure-as-code.",
     type: "website",
     locale: "en_US",
   },

@@ -53,14 +53,17 @@ export interface ProjectFrontmatter {
   date: string;
   thumbnail?: string;
   images?: ContentImage[];
+  hidden?: boolean;
 }
 
 export function getProjects(): MDXFile<ProjectFrontmatter>[] {
-  return getMDXFiles<ProjectFrontmatter>("projects").sort(
-    (a, b) =>
-      new Date(b.frontmatter.date).getTime() -
-      new Date(a.frontmatter.date).getTime()
-  );
+  return getMDXFiles<ProjectFrontmatter>("projects")
+    .filter((p) => !p.frontmatter.hidden)
+    .sort(
+      (a, b) =>
+        new Date(b.frontmatter.date).getTime() -
+        new Date(a.frontmatter.date).getTime()
+    );
 }
 
 export function getFeaturedProjects(): MDXFile<ProjectFrontmatter>[] {
@@ -138,11 +141,12 @@ export interface BlogFrontmatter {
   tags: string[];
   published: boolean;
   coverImage?: string;
+  hidden?: boolean;
 }
 
 export function getBlogPosts(): MDXFile<BlogFrontmatter>[] {
   return getMDXFiles<BlogFrontmatter>("blog")
-    .filter((p) => p.frontmatter.published)
+    .filter((p) => p.frontmatter.published && !p.frontmatter.hidden)
     .sort(
       (a, b) =>
         new Date(b.frontmatter.date).getTime() -
@@ -223,18 +227,30 @@ export function getEducation(): MDXFile<EducationFrontmatter> | null {
 export interface CertificationFrontmatter {
   name: string;
   issuer: string;
-  dateEarned: string;
+  dateEarned?: string;
   expiryDate?: string;
   verifyUrl?: string;
   badgeSrc?: string;
+  badgeDark?: string;
+  inprogress?: boolean;
+  estimatedCompletion?: string;
 }
 
 export function getCertifications(): MDXFile<CertificationFrontmatter>[] {
-  return getMDXFiles<CertificationFrontmatter>("certifications").sort(
-    (a, b) =>
-      new Date(b.frontmatter.dateEarned).getTime() -
-      new Date(a.frontmatter.dateEarned).getTime()
-  );
+  return getMDXFiles<CertificationFrontmatter>("certifications").sort((a, b) => {
+    // If both have dateEarned, sort by date (newest first)
+    if (a.frontmatter.dateEarned && b.frontmatter.dateEarned) {
+      return (
+        new Date(b.frontmatter.dateEarned).getTime() -
+        new Date(a.frontmatter.dateEarned).getTime()
+      );
+    }
+    // If only one has dateEarned, put it first
+    if (a.frontmatter.dateEarned) return -1;
+    if (b.frontmatter.dateEarned) return 1;
+    // If neither has dateEarned, maintain original order
+    return 0;
+  });
 }
 
 /* ────────────────────────────────────────────
