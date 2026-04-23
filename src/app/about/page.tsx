@@ -1,11 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Download, Mail, MapPin } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/icons";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { EducationCard } from "@/components/education-card";
-import { CertificationGrid } from "@/components/certification-grid";
 import { AboutContent } from "@/components/about-content";
 import {
   getAbout,
@@ -23,29 +16,6 @@ export const metadata: Metadata = {
       "Cloud Infrastructure Engineer with 6+ years of experience in AWS, Kubernetes, and infrastructure-as-code.",
   },
 };
-
-const contactItems = [
-  {
-    icon: Mail,
-    label: "ammar.hatiya@gmail.com",
-    href: "mailto:ammar.hatiya@gmail.com",
-  },
-  {
-    icon: GitHubIcon,
-    label: "github.com/ammarhatiya",
-    href: "github.com/ammarhatiya",
-  },
-  {
-    icon: LinkedInIcon,
-    label: "linkedin.com/in/ammar-hatiya",
-    href: "linkedin.com/in/ammar-hatiya",
-  },
-  {
-    icon: MapPin,
-    label: "Toronto, Canada — EST",
-    href: null,
-  },
-];
 
 /**
  * Parse the MDX body into named sections using HTML comment dividers.
