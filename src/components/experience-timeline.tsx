@@ -44,9 +44,11 @@ export function ExperienceTimeline({ items }: Props) {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    setAnimated(true);
   }, []);
 
   function openLightbox(images: ContentImage[], index: number) {
@@ -62,7 +64,17 @@ export function ExperienceTimeline({ items }: Props) {
 
       <div className="space-y-8">
         {items.map((item, index) => (
-          <div key={item.slug} className="relative pl-10 sm:pl-14">
+          <div
+            key={item.slug}
+            className={`relative pl-10 sm:pl-14 transition-all duration-200 ease-out ${
+              animated
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
+            style={{
+              transitionDelay: animated ? `${index * 100}ms` : "0ms",
+            }}
+          >
             {/* Timeline dot */}
             <div className="absolute left-2.5 top-1 flex h-3 w-3 items-center justify-center rounded-full border-2 border-[hsl(var(--primary))] bg-background sm:left-[18px]">
               <div
