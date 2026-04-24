@@ -2,14 +2,17 @@
   {
     "type": "blog",
     "slug": "aws-cost-optimization",
-    "title": "How We Cut Our AWS Bill by 32% Without Sacrificing Performance",
+    "title": "K-VQG: How AI Understands Images",
     "summary": "A step-by-step breakdown of the tooling and strategies we used to save $240k annually on cloud infrastructure.",
     "tags": [
-      "AWS",
-      "Cost Optimization",
-      "Cloud"
+      "Deep Learning",
+      "NLP",
+      "Multi-modal AI",
+      "Computer Vision",
+      "Python",
+      "Docker"
     ],
-    "date": "2025-02-18"
+    "date": "2024-04-07"
   },
   {
     "type": "blog",

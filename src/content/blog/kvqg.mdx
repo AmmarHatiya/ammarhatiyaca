@@ -1,0 +1,51 @@
+---
+title: "K-VQG: How AI Understands Images"
+date: "2024-04-07"
+summary: "A step-by-step breakdown of the tooling and strategies we used to save $240k annually on cloud infrastructure."
+tags: ["Deep Learning", "NLP", "Multi-modal AI", "Computer Vision", "Python", "Docker"]
+published: true
+coverImage: "/blog/kvqg-cover.png"
+---
+To a human, a picture of a car engine is an intuitive map of parts and functions. To a computer, however, that same image is just a massive, cold spreadsheet of numbers. One of the most significant challenges in modern AI is bridging the gap between those raw numerical grids and the high-level "understanding" required to explain them to a user.
+
+In my recent research, I’ve been exploring how we can move beyond simple object labeling to something much more ambitious: Knowledge-based Visual Question Generation (K-VQG). Instead of just telling the AI what is in the image, we are teaching it how to ask the right questions to extract deeper knowledge. Here is how we are teaching computers to finally "see" like we do.
+
+### The Numerical Grid: How Computers "See"
+The first thing to understand is that a machine’s "eyes" are strictly mathematical. Every digital image is a matrix (or a 3D tensor) where each pixel represents a numerical value for color and brightness. A grayscale image might be a single grid of values from 0 (black) to 255 (white), while a color image uses three overlapping matrices—Red, Green, and Blue (RGB).
+
+For a computer to "understand" this grid, it typically uses Convolutional Neural Networks (CNNs). These networks slide tiny mathematical filters over the pixel grid to detect edges, then shapes, and eventually complex objects like tires or headlights. But even if the computer identifies a "start button," it doesn't inherently understand how to use it or why it matters. That requires a bridge between vision and language.
+
+### The Bridge: Semantic Role Labeling (SRL)
+To get from "I see a button" to "How do I start the car?", we use a technique called Semantic Role Labeling (SRL). SRL is essentially "shallow semantic parsing"—it identifies the "who did what to whom, where, and how" in a sentence.
+
+In our research, we utilized SRL to map the relationship between visual entities and their functions. For example, in the sentence "The driver (Agent) presses (Predicate) the button (Theme)," SRL identifies the roles each word plays. By grounding these roles in an image, the computer starts to understand the logic of the scene rather than just the objects within it.
+
+### K-VQG: Teaching AI to Ask, Not Just Answer
+Most people are familiar with Visual Question Answering (VQA)—you ask the AI a question, and it answers. However, my research focuses on the reverse: Visual Question Generation (VQG). Specifically, Knowledge-based VQG.
+
+Traditional VQG often feels "unnatural" because it asks questions the computer already knows the answer to. In our K-VQG framework, we treat questions as a tool for knowledge acquisition. We provide the model with "masked" knowledge triplets (like , IsA, feline) and an image of a lion. The computer’s task is to generate a question—"What is that tan feline on the grass called?"—that would help it fill in that missing knowledge.
+
+### How My Research Helped: The Multi-Method Approach
+To find the best way for computers to generate these intelligent inquiries, we tested five distinct methods:
+
+Vanilla Prompting: A basic starting point using GPT-4V.
+
+1-Shot & 2-Shot Learning: Providing the AI with one or two examples of a "good" question before asking it to generate its own.
+
+Categorization: Teaching the AI to first identify if an image is an "Item Dictionary" (parts of a whole) or "Procedural" (step-by-step instructions) before generating questions.
+
+Seq2Seq with SRL: Using a Sequence-to-Sequence model that leverages those "who/what/where" semantic labels we discussed earlier.
+
+The Breakthrough: We discovered that the 2-shot learning method—simply giving the model two high-quality examples—delivered the best quantitative results across metrics like Semantic Similarity and METEOR. This suggests that providing just a tiny bit of "human context" is the secret to helping Large Multimodal Models (LMMs) bridge the gap between pixels and prose.
+
+### Why This Matters
+This isn't just about making smarter chatbots. K-VQG has massive real-world potential:
+
+Assistive Tech: Helping the visually impaired understand complex scenes by generating descriptive questions they can confirm.
+
+Education: Automatically generating learning assessments from technical diagrams or textbooks.
+
+Automotive: Allowing a user to snap a photo of their dashboard and get an instant, context-aware "How-To" guide.
+
+By teaching computers to ask questions, we are finally moving away from passive image labeling and toward a future where machines can truly reason with us about the world we both see.
+
