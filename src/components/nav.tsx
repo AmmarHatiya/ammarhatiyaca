@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Moon, Sun, Menu, X, Search } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -19,6 +19,7 @@ const navLinks = [
 
 export function Nav() {
   const pathname = usePathname();
+  const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -26,6 +27,25 @@ export function Nav() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  /* ── Global Cmd+K / Ctrl+K shortcut to open search ── */
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        if (pathname === "/search") {
+          // Already on search page - dispatch focus event for search input
+          window.dispatchEvent(new CustomEvent("focus-search"));
+        } else {
+          // Navigate to search page
+          router.push("/search");
+        }
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [router, pathname]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">

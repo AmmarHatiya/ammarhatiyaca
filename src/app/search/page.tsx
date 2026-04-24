@@ -215,17 +215,19 @@ function SearchContent() {
     inputRef.current?.focus();
   }, [router]);
 
-  /* ── Global Cmd+K / Ctrl+K shortcut ── */
+  /* ── Auto-focus input on mount (for global Ctrl+K shortcut) ── */
   useEffect(() => {
-    function handleKeyDown(e: KeyboardEvent) {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
-        e.preventDefault();
-        inputRef.current?.focus();
-      }
+    inputRef.current?.focus();
+  }, []);
+
+  /* ── Listen for focus-search event when already on search page ── */
+  useEffect(() => {
+    function handleFocusSearch() {
+      inputRef.current?.focus();
     }
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("focus-search", handleFocusSearch);
+    return () => window.removeEventListener("focus-search", handleFocusSearch);
   }, []);
 
   /* ── Cleanup debounce on unmount ── */

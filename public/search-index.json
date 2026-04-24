@@ -1,7 +1,15 @@
 [
   {
     "type": "blog",
-    "slug": "aws-cost-optimization",
+    "slug": "k8s-zero-downtime",
+    "title": "",
+    "summary": "",
+    "tags": [],
+    "date": ""
+  },
+  {
+    "type": "blog",
+    "slug": "kvqg",
     "title": "K-VQG: How AI Understands Images",
     "summary": "A step-by-step breakdown of the tooling and strategies we used to save $240k annually on cloud infrastructure.",
     "tags": [
@@ -13,14 +21,6 @@
       "Docker"
     ],
     "date": "2024-04-07"
-  },
-  {
-    "type": "blog",
-    "slug": "k8s-zero-downtime",
-    "title": "",
-    "summary": "",
-    "tags": [],
-    "date": ""
   },
   {
     "type": "blog",
