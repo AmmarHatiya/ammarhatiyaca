@@ -11,11 +11,11 @@
     "type": "blog",
     "slug": "kvqg",
     "title": "K-VQG: How AI Understands Images",
-    "summary": "A step-by-step breakdown of the tooling and strategies we used to save $240k annually on cloud infrastructure.",
+    "summary": "Automating visual knowledge discovery through semantic reasoning and scalable AI architecture.",
     "tags": [
       "Deep Learning",
+      "Multi-modal AI Architecture",
       "NLP",
-      "Multi-modal AI",
       "Computer Vision",
       "Python",
       "Docker"
