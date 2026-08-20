@@ -115,7 +115,7 @@ export function calculateDuration(start: string, end: string): string {
 
   let months =
     (endDate.getFullYear() - startDate.getFullYear()) * 12 +
-    (endDate.getMonth() - startDate.getMonth());
+    (endDate.getMonth() - startDate.getMonth()) + 1;
 
   if (months < 0) months = 0;
 
