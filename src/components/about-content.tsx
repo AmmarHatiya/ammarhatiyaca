@@ -140,7 +140,7 @@ export function AboutContent({
         </div>
       </section>
 
-      {/* ─── 6. RESUME DOWNLOAD ─── */}
+      {/* ─── 6. RESUME DOWNLOAD ───
       <section
         aria-label="Resume download"
         className={`mt-10 transition-all duration-200 ease-out ${
@@ -154,7 +154,7 @@ export function AboutContent({
             Download Resume (PDF)
           </Button>
         </Link>
-      </section>
+      </section> */}
 
       {/* ─── 7. CONTACT ─── */}
       <section

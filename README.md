@@ -26,7 +26,7 @@ A personal portfolio site for a Cloud Infrastructure Engineer, built with Next.j
 | `/about` | Professional summary, approach, contact info |
 | `/blog` | Blog index with article cards |
 | `/blog/[slug]` | Individual blog post (MDX rendered) |
-| `/resume` | Redirects to `/resume.pdf` |
+<!-- | `/resume` | Redirects to `/resume.pdf` | -->
 
 ## Prerequisites
 
