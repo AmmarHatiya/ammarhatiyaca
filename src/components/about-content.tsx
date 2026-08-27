@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { Download, Mail, MapPin } from "lucide-react";
+
+import { Mail, MapPin } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
-import { Button } from "@/components/ui/button";
+// import Link from "next/link";
+// import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { EducationCard } from "@/components/education-card";
 import { CertificationGrid } from "@/components/certification-grid";
