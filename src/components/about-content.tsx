@@ -140,8 +140,8 @@ export function AboutContent({
         </div>
       </section>
 
-      {/* ─── 6. RESUME DOWNLOAD ───
-      <section
+      {/* ─── 6. RESUME DOWNLOAD ─── */}
+      {/* <section
         aria-label="Resume download"
         className={`mt-10 transition-all duration-200 ease-out ${
           mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
